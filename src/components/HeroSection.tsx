@@ -3,10 +3,10 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import matxDashboard from "@/assets/matx-dashboard.jpg";
-import happyTechnician from "@/assets/happy-technician.jpg";
-import cleanDashboard from "@/assets/clean-dashboard.jpg";
+import happyTechnicianBlack from "@/assets/happy-technician-black.jpg";
+import fullscreenDashboard from "@/assets/fullscreen-dashboard.jpg";
 import industrialMachines from "@/assets/industrial-machines.jpg";
+import mobileApp from "@/assets/mobile-app.jpg";
 
 const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -114,7 +114,7 @@ const HeroSection = () => {
                   <CarouselItem>
                     <div className="relative">
                       <img 
-                        src={happyTechnician} 
+                        src={happyTechnicianBlack} 
                         alt="Technicien heureux utilisant la plateforme Matx" 
                         className="w-full rounded-2xl shadow-2xl glass-card"
                       />
@@ -124,8 +124,8 @@ const HeroSection = () => {
                   <CarouselItem>
                     <div className="relative">
                       <img 
-                        src={cleanDashboard} 
-                        alt="Dashboard épuré de l'interface Matx" 
+                        src={fullscreenDashboard} 
+                        alt="Dashboard plein écran de l'interface Matx" 
                         className="w-full rounded-2xl shadow-2xl glass-card"
                       />
                       <div className="absolute inset-0 rounded-2xl bg-gradient-primary opacity-20 animate-pulse" />
@@ -136,6 +136,16 @@ const HeroSection = () => {
                       <img 
                         src={industrialMachines} 
                         alt="Machines d'usinage performantes" 
+                        className="w-full rounded-2xl shadow-2xl glass-card"
+                      />
+                      <div className="absolute inset-0 rounded-2xl bg-gradient-primary opacity-20 animate-pulse" />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="relative">
+                      <img 
+                        src={mobileApp} 
+                        alt="Application mobile Matx avec charts et données" 
                         className="w-full rounded-2xl shadow-2xl glass-card"
                       />
                       <div className="absolute inset-0 rounded-2xl bg-gradient-primary opacity-20 animate-pulse" />
