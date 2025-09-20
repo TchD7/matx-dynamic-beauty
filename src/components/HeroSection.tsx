@@ -1,7 +1,12 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 import matxDashboard from "@/assets/matx-dashboard.jpg";
+import happyTechnician from "@/assets/happy-technician.jpg";
+import cleanDashboard from "@/assets/clean-dashboard.jpg";
+import industrialMachines from "@/assets/industrial-machines.jpg";
 
 const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -90,15 +95,54 @@ const HeroSection = () => {
             </div>
           </div>
           
-          {/* Right content - Dashboard mockup */}
+          {/* Right content - Image Carousel */}
           <div className="relative animate-fade-in" style={{ animationDelay: "0.3s" }}>
             <div className="relative floating">
-              <img 
-                src={matxDashboard} 
-                alt="Interface Matx Dashboard" 
-                className="w-full rounded-2xl shadow-2xl glass-card"
-              />
-              <div className="absolute inset-0 rounded-2xl bg-gradient-primary opacity-20 animate-pulse" />
+              <Carousel
+                opts={{
+                  align: "start",
+                  loop: true,
+                }}
+                plugins={[
+                  Autoplay({
+                    delay: 3000,
+                  }),
+                ]}
+                className="w-full max-w-lg mx-auto"
+              >
+                <CarouselContent>
+                  <CarouselItem>
+                    <div className="relative">
+                      <img 
+                        src={happyTechnician} 
+                        alt="Technicien heureux utilisant la plateforme Matx" 
+                        className="w-full rounded-2xl shadow-2xl glass-card"
+                      />
+                      <div className="absolute inset-0 rounded-2xl bg-gradient-primary opacity-20 animate-pulse" />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="relative">
+                      <img 
+                        src={cleanDashboard} 
+                        alt="Dashboard épuré de l'interface Matx" 
+                        className="w-full rounded-2xl shadow-2xl glass-card"
+                      />
+                      <div className="absolute inset-0 rounded-2xl bg-gradient-primary opacity-20 animate-pulse" />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="relative">
+                      <img 
+                        src={industrialMachines} 
+                        alt="Machines d'usinage performantes" 
+                        className="w-full rounded-2xl shadow-2xl glass-card"
+                      />
+                      <div className="absolute inset-0 rounded-2xl bg-gradient-primary opacity-20 animate-pulse" />
+                    </div>
+                  </CarouselItem>
+                </CarouselContent>
+              </Carousel>
             </div>
             
             {/* Floating UI elements */}
